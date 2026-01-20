@@ -7,11 +7,12 @@ enum AutopilotDirections
 {
     roll = 0,
     pitch,
-    yaw,
+    yaw
 };
 
 extern bool autopilot[3];
 
 void DisengageAutopilot();
+
 
 #endif
