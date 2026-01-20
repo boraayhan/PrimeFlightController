@@ -1,0 +1,27 @@
+#ifndef CONTROL_SURFACE_H
+#define CONTROL_SURFACE_H
+
+#include <Arduino.h>
+#include <Servo.h>
+#include "global/global.h"
+
+struct ControlSurface
+{
+  Servo servo;
+  int PIN_SIGNAL;
+  float zero;
+  float trimAngle;
+  float min;
+  float max;
+  int dir; // +1 or -1 to correct for rotational symmetry
+  void init();
+  void test();
+  void move(float angle);
+  void trim(float angle);
+};
+void MoveSurfaces(float jR, float jP);
+
+extern ControlSurface surfaces[num_surface];
+
+void TestSurfaces();
+#endif
