@@ -23,5 +23,8 @@ void MoveSurfaces(float jR, float jP);
 
 extern ControlSurface surfaces[num_surface];
 
+void SetBankAngle(float angle);
+void SetPitchAngle(float angle);
+
 void TestSurfaces();
 #endif

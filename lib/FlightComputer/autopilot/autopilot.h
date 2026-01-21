@@ -2,6 +2,8 @@
 #define AUTOPILOT_H
 
 #include <Arduino.h>
+#include "../global/global.h"
+#include "../sensors/gps/gps.h"
 
 enum AutopilotDirections
 {
@@ -10,9 +12,21 @@ enum AutopilotDirections
     yaw
 };
 
-extern bool autopilot[3];
+enum AutopilotState
+{
+    disabled = 0,
+    circle,
+    hold,
+    autoland
+};
+
+extern bool autopilotAxis[3];
+extern AutopilotState autopilotState;
 
 void DisengageAutopilot();
-
-
+void AutopilotPeriodic();
+bool DetermineTurningRadius();
+void RollAutopilot();
+void PitchAutopilot();
+void YawAutopilot();
 #endif

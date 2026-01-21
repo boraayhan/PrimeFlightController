@@ -14,7 +14,6 @@ const float ELEVATOR_POS_MIN = -70;
 const float ELEVATOR_POS_MAX = 70;
 const float AUTOPILOT_DISENGAGE_THRESHOLD = 0.3; // 0 to 1, how "hard" input is needed to disengage AP. > 0.5 is dangerous.
 
-
 const float KP_ROLL = 1; // FIXME: Tune!!!
 const float KI_ROLL = 1; // FIXME: Tune!!!
 const float KD_ROLL = 1; // FIXME: Tune!!!
@@ -38,4 +37,15 @@ enum ControlSurfaces
 extern float flap;
 extern float throttle;
 
+// DETERMINED CONSTANTS
+
+extern float turning_radius; // in meters
+
+float haversine(float lat1, float lon1, float lat2, float lon2); 
+
+struct Coordinate
+{
+    double latitude;
+    double longitude;
+};
 #endif
