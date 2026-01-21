@@ -67,3 +67,8 @@ void TestSurfaces()
   }
   Serial.println(F("Testing complete!"));
 }
+
+void SetBankAngle(float angle)
+{
+    
+}
