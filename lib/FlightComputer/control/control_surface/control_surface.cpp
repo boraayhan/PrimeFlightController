@@ -46,15 +46,20 @@ ControlSurface surfaces[num_surface] = {
     {Servo(), 6, 70, 0, ELEVATOR_POS_MIN, ELEVATOR_POS_MAX, -1}, // ELEVATOR_RIGHT
 };
 
-void MoveSurfaces(float jR, float jP)
-{                                                                // Translates a value (-1.00 to 1.00) to aileron and elevator motion
-  float pAileron = jR * (AILERON_POS_MAX - AILERON_POS_MIN) / 2; // TODO: Verify whether div by 2 is correct
-  float pElevator = jP * (ELEVATOR_POS_MAX - ELEVATOR_POS_MIN) / 2;
+void MoveAilerons(float jR)
+{
+    float pAileron = jR * (AILERON_POS_MAX - AILERON_POS_MIN) / 2; // TODO: Verify whether div by 2 is correct
 
-  surfaces[AILERON_LEFT].move(pAileron);
-  surfaces[AILERON_RIGHT].move(pAileron);
-  surfaces[ELEVATOR_LEFT].move(pElevator);
-  surfaces[ELEVATOR_RIGHT].move(pElevator);
+    surfaces[AILERON_LEFT].move(pAileron);
+    surfaces[AILERON_RIGHT].move(pAileron);
+}
+
+void MoveElevators(float jP)
+{
+    float pElevator = jP * (ELEVATOR_POS_MAX - ELEVATOR_POS_MIN) / 2;
+
+    surfaces[ELEVATOR_LEFT].move(pElevator);
+    surfaces[ELEVATOR_RIGHT].move(pElevator);
 }
 
 void TestSurfaces()

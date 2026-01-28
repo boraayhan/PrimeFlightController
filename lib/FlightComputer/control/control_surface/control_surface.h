@@ -19,7 +19,9 @@ struct ControlSurface
   void move(float angle);
   void trim(float angle);
 };
-void MoveSurfaces(float jR, float jP);
+
+void MoveAilerons(float jR);
+void MoveElevators(float jP);
 
 extern ControlSurface surfaces[num_surface];
 

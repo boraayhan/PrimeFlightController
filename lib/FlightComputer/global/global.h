@@ -2,6 +2,7 @@
 #define GLOBAL_H
 
 #include <Arduino.h>
+#include "math/vector/vector.h"
 
 // CONSTANTS
 #define GEAR_DOWN 0
@@ -36,16 +37,13 @@ enum ControlSurfaces
 // VARIABLES 
 extern float flap;
 extern float throttle;
+extern float inputRoll; // from -1 to 1
+extern float inputPitch; // from -1 to 1
 
 // DETERMINED CONSTANTS
 
+
 extern float turning_radius; // in meters
 
-float haversine(float lat1, float lon1, float lat2, float lon2); 
 
-struct Coordinate
-{
-    double latitude;
-    double longitude;
-};
 #endif

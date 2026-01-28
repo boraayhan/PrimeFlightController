@@ -4,8 +4,11 @@
 #include "control/motor/motor.h"
 #include "control/control_surface/control_surface.h"
 
+#include "../../lib/FlightComputer/header.h"
+
 // FUNCTIONS
 
+// Implement RF24 Signal Strength Check Algorithm (Send n packages, see how many arrive)
 void InitializeSystems()
 {
   SetupRadio();
@@ -31,11 +34,25 @@ void loop()
 {
   ReceiveRadio();
   UpdateThrottle();
-  /*if (autopilot[roll])
-  { // Maintains zero bank angle
-    RollAutopilot();
-  }
-  if (autopilot[pitch])
+  AutopilotPeriodic();
+}
+
+void UpdateControls()
+{
+  if(autopilotAxis[roll])
   {
-  }*/
+    
+  }
+  else // 
+  {
+    MoveAilerons(inputRoll);
+  }
+  if(autopilotAxis[pitch])
+  {
+
+  }
+  else
+  {
+    MoveElevators(inputPitch);
+  }
 }

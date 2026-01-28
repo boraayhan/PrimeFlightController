@@ -1,3 +1,4 @@
+#include "../../header.h"
 #include "communication.h"
 
 uint8_t address[][6] = {"1Node", "2Node"};
@@ -17,7 +18,8 @@ void ReceiveRadio()
 
     if (id == 0)
     { // Joystick input
-      MoveSurfaces(p1, p2);
+      inputRoll = p1;
+      inputPitch = p2;
       if (abs(p1) > AUTOPILOT_DISENGAGE_THRESHOLD || abs(p2) > AUTOPILOT_DISENGAGE_THRESHOLD)
       { // Disengage autopilot
         DisengageAutopilot();
