@@ -4,6 +4,11 @@
 #include <Arduino.h>
 #include <Servo.h>
 
+enum GearStates {
+  GEAR_DOWN = 0,
+  GEAR_UP = 1
+};
+
 struct LandingGear
 {
 

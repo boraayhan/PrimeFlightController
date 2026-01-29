@@ -2,7 +2,7 @@
 #define PID_H
 #include <Arduino.h>
 
-class pid
+struct pid
 {
 public:
     float compute(float input, float target);

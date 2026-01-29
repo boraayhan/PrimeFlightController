@@ -1,4 +1,5 @@
 #include "control_surface.h"
+
 void ControlSurface::init()
 {
     servo.attach(PIN_SIGNAL);
@@ -39,7 +40,7 @@ void ControlSurface::trim(float angle)
     trimAngle += dir * angle;
 }
 
-ControlSurface surfaces[num_surface] = {
+ControlSurface surfaces[4] = {
     {Servo(), 3, 90, 0, AILERON_POS_MIN, AILERON_POS_MAX, -1},   // AILERON_LEFT
     {Servo(), 4, 90, 0, AILERON_POS_MIN, AILERON_POS_MAX, -1},   // AILERON_RIGHT
     {Servo(), 5, 90, 0, ELEVATOR_POS_MIN, ELEVATOR_POS_MAX, 1},  // ELEVATOR_LEFT

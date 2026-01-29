@@ -13,15 +13,26 @@ enum AutopilotDirections
     yaw
 };
 
-/*enum AutopilotState
+enum DubinsPathType
 {
-    disabled = 0,
-    calibrating,
-    circle,
-    hold,
-    autoland
+    LSL,
+    LSR,
+    RSL,
+    RSR
 };
-extern AutopilotState autopilotState;*/
+
+struct DubinsPath {
+    Point pi; // Point where path STARTS, not where path is created! = currentPos + vel * tdelay
+    Point pf;
+    Vector initVelocity; // Also dirI
+    Vector dirF;
+    Point C1;
+    Point C2;
+    DubinsPathType type;
+
+    DubinsPath(Point s, Point f, Vector v, Vector finalDirection);
+    void DetermineOptimalPath();
+};
 
 extern bool autopilotAxis[3];
 void AutopilotPeriodic();

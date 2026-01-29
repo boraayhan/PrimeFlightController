@@ -1,7 +1,6 @@
-#include "../../header.h"
 #include "gps.h"
 
 Vector3 GetPosition() //FIXME: Finish
 {
-    // ...existing code...
+    return Vector3{0, 0, 0};
 }

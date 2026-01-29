@@ -3,8 +3,8 @@
 #include "communication/communication.h"
 #include "control/motor/motor.h"
 #include "control/control_surface/control_surface.h"
-
-#include "../../lib/FlightComputer/header.h"
+#include "autopilot/autopilot.h"
+#include "global/global.h"
 
 // FUNCTIONS
 

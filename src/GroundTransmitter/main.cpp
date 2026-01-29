@@ -34,7 +34,7 @@ void setup() {
 }
 
 void loop() {
-  if (Serial.available() >= sizeof(Payload)) {
+  if (Serial.available() >= (int)sizeof(Payload)) {
     Serial.readBytes((char*)&receivedData, sizeof(Payload));
     if (!radio.write(&receivedData, sizeof(Payload))) {
       Serial.println(F("RF24 transmission fail"));

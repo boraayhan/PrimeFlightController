@@ -23,10 +23,21 @@ struct ControlSurface
 void MoveAilerons(float jR);
 void MoveElevators(float jP);
 
-extern ControlSurface surfaces[num_surface];
+enum ControlSurfaces
+{
+  AILERON_LEFT = 0,
+  AILERON_RIGHT,
+  ELEVATOR_LEFT,
+  ELEVATOR_RIGHT,
+};
+
+extern ControlSurface surfaces[4];
 
 void SetBankAngle(float angle);
 void SetPitchAngle(float angle);
 
 void TestSurfaces();
+
+extern ControlSurface surfaces[];
+
 #endif

@@ -1,4 +1,3 @@
-#include "../../header.h"
 #include "communication.h"
 
 uint8_t address[][6] = {"1Node", "2Node"};

@@ -13,6 +13,12 @@ void AutopilotPeriodic()
 {
 }
 
-void ComputeDSDPath() {
-    Point c1 = {{0, 0, 0}};
+DubinsPath::DubinsPath(Point s, Point f, Vector v, Vector finalDirection)
+{
+    pi = Point{add(pi.value, scalarMultiply(dubinsDelay, initVelocity.value))}; // Point to start turning;
+    pf = f;
+    initVelocity = v;
+    dirF.value = unitVector(finalDirection.value);
+
 }
+

@@ -1,8 +1,9 @@
 #include "global.h"
 
 // Measured Quantities
-Vector velocity;
-Point position;
+Vector velocity = {{0, 0, 0}};
+Point position = {{0, 0, 0}};
+
 // Control Inputs
 float flap = 0;
 float throttle = 0;

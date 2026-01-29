@@ -16,13 +16,14 @@ struct Vector {
     Vector3 value;
 };
 
-float haversine(float lat1, float lon1, float lat2, float lon2); // Credit to GeeksforGeeks
+double haversine(double lat1, double lon1, double lat2, double lon2); // Credit to GeeksforGeeks
 
-Vector3 add(Vector3& v1, Vector3& v2);
-Vector3 scalarMultiply(float s, Vector3& v);
-Vector3 unitVector(Vector3& v);
-Vector fromToVector(Vector3& v1, Vector3& v2);
+Vector3 add(const Vector3& v1, const Vector3& v2);
+Vector3 scalarMultiply(float s, const Vector3& v);
+Vector3 unitVector(const Vector3& v);
+Vector3 crossProduct(const Vector3& v1, const Vector3& v2);
+Vector fromToVector(const Vector3& v1, const Vector3& v2);
 
-float magnitude(Vector3& v);
+float magnitude(const Vector3& v);
 
 #endif
